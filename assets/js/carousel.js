@@ -1,7 +1,6 @@
 /**
  * SaqyFly Carousel Component
- * Handles: Auto-check for existing images vs neutral placeholders,
- * Previous / Next navigation, Dots, Touch swipe, Keyboard navigation.
+ * Supports both Image and Video slides, Touch Swipe, Keyboard, Controls & Auto-Pause
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,31 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentIndex = 0;
   const totalSlides = slides.length;
 
-  // Image files corresponding to slides
-  const slideImages = [
-    { path: 'assets/images/carousel/drone-prototype.jpg', alt: 'Drone prototype testing' },
-    { path: 'assets/images/carousel/paddy-field-test.jpg', alt: 'Paddy field testing in Brunei' },
-    { path: 'assets/images/carousel/cv-development.jpg', alt: 'Computer vision and software development' },
-    { path: 'assets/images/carousel/team-collaboration.jpg', alt: 'Project collaboration session' },
-    { path: 'assets/images/carousel/aerial-survey.jpg', alt: 'Aerial survey field view' }
-  ];
-
-  // Dynamically replace placeholder with image if it loads successfully
-  slides.forEach((slide, idx) => {
-    if (slideImages[idx]) {
-      const img = new Image();
-      img.src = slideImages[idx].path;
-      img.alt = slideImages[idx].alt;
-      img.onload = () => {
-        const placeholder = slide.querySelector('.carousel-slide__placeholder');
-        if (placeholder) {
-          slide.replaceChild(img, placeholder);
-        }
-      };
-      // If error/missing, the neutral placeholder remains intact
-    }
-  });
-
   // Create indicator dots
   dotsContainer.innerHTML = '';
   slides.forEach((_, idx) => {
@@ -55,7 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const dots = Array.from(dotsContainer.querySelectorAll('.carousel-dot'));
 
+  function pauseAllVideos() {
+    slides.forEach(slide => {
+      const vid = slide.querySelector('video');
+      if (vid && !vid.paused) {
+        vid.pause();
+      }
+    });
+  }
+
   function updateSlide() {
+    pauseAllVideos();
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
     dots.forEach((dot, idx) => {
       dot.classList.toggle('active', idx === currentIndex);
@@ -77,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
   }
 
-  // Keyboard accessibility
+  // Keyboard navigation
   document.addEventListener('keydown', (e) => {
     const carousel = document.getElementById('carousel');
     if (!carousel) return;

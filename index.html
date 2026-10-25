@@ -4,31 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Saqy Fly — Precision Agriculture Drone Services | Brunei</title>
-  <meta name="description" content="Saqy Fly provides drone-based crop spraying and field monitoring services to support smarter, data-driven farming in Brunei and Southeast Asia. Every Drop. Every Crop. Every Future." />
-  <meta property="og:title" content="Saqy — Precision Agriculture Drone Services" />
-  <meta property="og:description" content="Drone spraying, aerial monitoring, and data-driven insights for paddy and plantation farmers in Brunei." />
+  <meta name="description" content="Saqy Fly provides drone crop spraying and aerial field monitoring services for paddy and plantation farmers in Brunei. Every Drop. Every Crop. Every Future." />
+  <meta property="og:title" content="Saqy Fly — Precision Agriculture Drone Services" />
+  <meta property="og:description" content="Drone spraying and aerial monitoring for paddy and plantation farmers in Brunei." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2300c853'/><text x='6' y='24' font-size='20' font-weight='900' fill='%23000'>S</text></svg>" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230077b6'/><text x='5' y='23' font-size='18' font-weight='900' fill='%23fff'>SF</text></svg>" />
 </head>
 <body>
 
   <!-- ══ NAV ══ -->
-  <nav class="nav">
+  <nav class="nav" id="mainNav">
     <div class="container nav__inner">
       <a href="/" class="nav__logo">
-        <img src="images/logo.png" alt="Saqy Fly logo" class="nav__logo-img" />
+        <img src="images/logo.png" alt="Saqy Fly" />
       </a>
       <ul class="nav__links">
-        <li><a href="/#about">About</a></li>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/about/">About</a></li>
         <li><a href="/services/">Services</a></li>
-        <li><a href="/#how">How We Work</a></li>
-        <li><a href="/#contact">Contact</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
       </ul>
-      <a href="/#contact" class="btn btn-primary nav__cta">Enquire Now</a>
+      <a href="/contact/" class="btn btn-primary nav__cta">Contact Us</a>
       <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -36,393 +36,372 @@
   </nav>
 
   <!-- Mobile Nav -->
-  <div class="nav__mobile" id="mobileNav">
+  <div class="nav__mobile" id="mobileNav" role="dialog" aria-label="Mobile navigation">
     <button class="nav__close" id="navClose" aria-label="Close menu">✕</button>
-    <a href="/#about" onclick="closeMobileNav()">About</a>
+    <a href="/" onclick="closeMobileNav()">Home</a>
+    <a href="/about/" onclick="closeMobileNav()">About</a>
     <a href="/services/" onclick="closeMobileNav()">Services</a>
-    <a href="/#how" onclick="closeMobileNav()">How We Work</a>
-    <a href="/#contact" onclick="closeMobileNav()">Contact</a>
-    <a href="/#contact" class="btn btn-primary" onclick="closeMobileNav()">Enquire Now</a>
+    <a href="/contact/" onclick="closeMobileNav()">Contact Us</a>
+    <a href="/contact/" class="btn btn-primary" onclick="closeMobileNav()">Contact Us</a>
   </div>
 
   <!-- ══ HERO ══ -->
   <section class="hero" id="home">
-    <div class="hero__bg"></div>
-    <div class="hero__grid-lines"></div>
     <div class="container hero__inner">
       <div class="hero__content">
         <div class="hero__eyebrow">
-          🌾 Precision Agriculture · Brunei &amp; Southeast Asia
+          🌾 Precision Agriculture · Brunei Darussalam
         </div>
         <h1 class="hero__title">
           Every Drop.<br>Every Crop.<br><em>Every Future.</em>
         </h1>
         <p class="hero__subtitle">
-          Saqy Fly brings drone-based spraying and aerial monitoring to paddy and plantation farmers — helping you act on real field data, not guesswork.
+          Saqy Fly brings drone-based crop spraying and aerial field monitoring to paddy and plantation farmers — helping you make decisions based on real field data.
         </p>
         <div class="hero__actions">
-          <a href="/services/" class="btn btn-primary">Explore Services</a>
-          <a href="/#contact" class="btn btn-outline">Talk to Us</a>
+          <a href="/services/" class="btn btn-white">View Services</a>
+          <a href="/contact/" class="btn btn-outline" style="border-color:rgba(255,255,255,.6);color:#fff;">Contact Us</a>
         </div>
         <div class="hero__notice">
-          ⚠️ Saqy is an early-stage company actively seeking pilot partners. Drone operations are subject to Brunei Department of Civil Aviation regulatory approvals.
+          ⚠️ Saqy Fly is an early-stage company seeking pilot partners. All drone operations are subject to Brunei Department of Civil Aviation regulatory approvals.
         </div>
       </div>
-      <div class="hero__image-wrap">
-        <div class="hero__drone-visual">
-          <!-- Illustrative drone SVG -->
+      <div class="hero__visual">
+        <div class="hero__drone-card">
           <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Body -->
-            <rect x="80" y="55" width="40" height="22" rx="6" fill="#1e2a1e" stroke="#00c853" stroke-width="1.5"/>
-            <!-- Arms -->
-            <line x1="80" y1="62" x2="40" y2="48" stroke="#00c853" stroke-width="2" stroke-linecap="round"/>
-            <line x1="120" y1="62" x2="160" y2="48" stroke="#00c853" stroke-width="2" stroke-linecap="round"/>
-            <line x1="80" y1="70" x2="40" y2="84" stroke="#00c853" stroke-width="2" stroke-linecap="round"/>
-            <line x1="120" y1="70" x2="160" y2="84" stroke="#00c853" stroke-width="2" stroke-linecap="round"/>
-            <!-- Propellers -->
-            <ellipse cx="40" cy="46" rx="18" ry="4" fill="#00c85340" stroke="#00c853" stroke-width="1"/>
-            <ellipse cx="160" cy="46" rx="18" ry="4" fill="#00c85340" stroke="#00c853" stroke-width="1"/>
-            <ellipse cx="40" cy="86" rx="18" ry="4" fill="#00c85340" stroke="#00c853" stroke-width="1"/>
-            <ellipse cx="160" cy="86" rx="18" ry="4" fill="#00c85340" stroke="#00c853" stroke-width="1"/>
-            <!-- Camera -->
-            <circle cx="100" cy="82" r="6" fill="#111" stroke="#00c853" stroke-width="1"/>
-            <circle cx="100" cy="82" r="3" fill="#00c853" opacity=".5"/>
-            <!-- Spray dots -->
-            <circle cx="90" cy="100" r="2" fill="#00c853" opacity=".6"/>
-            <circle cx="100" cy="106" r="2" fill="#00c853" opacity=".4"/>
-            <circle cx="110" cy="100" r="2" fill="#00c853" opacity=".6"/>
-            <circle cx="95" cy="112" r="1.5" fill="#00c853" opacity=".3"/>
-            <circle cx="105" cy="112" r="1.5" fill="#00c853" opacity=".3"/>
-            <!-- Signal arcs -->
-            <path d="M100 40 Q110 32 122 38" stroke="#00c853" stroke-width="1" stroke-dasharray="3 2" opacity=".4" fill="none"/>
-            <path d="M100 40 Q112 28 128 36" stroke="#00c853" stroke-width="1" stroke-dasharray="3 2" opacity=".25" fill="none"/>
+            <rect x="80" y="55" width="40" height="22" rx="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+            <line x1="80" y1="62" x2="40" y2="48" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="120" y1="62" x2="160" y2="48" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="80" y1="70" x2="40" y2="84" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="120" y1="70" x2="160" y2="84" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+            <ellipse cx="40" cy="46" rx="18" ry="4" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+            <ellipse cx="160" cy="46" rx="18" ry="4" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+            <ellipse cx="40" cy="86" rx="18" ry="4" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+            <ellipse cx="160" cy="86" rx="18" ry="4" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+            <circle cx="100" cy="82" r="6" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+            <circle cx="90" cy="100" r="2" fill="rgba(255,255,255,0.5)"/>
+            <circle cx="100" cy="106" r="2" fill="rgba(255,255,255,0.4)"/>
+            <circle cx="110" cy="100" r="2" fill="rgba(255,255,255,0.5)"/>
           </svg>
-          <span class="hero__image-label">🎨 Illustration — not actual equipment</span>
+          <p class="hero__drone-label">🎨 Illustration — not actual equipment</p>
         </div>
-        <div class="hero__stat-row">
+        <div class="hero__stats">
           <div class="hero__stat">
             <strong>2</strong>
-            <span>Core services offered</span>
-          </div>
-          <div class="hero__stat">
-            <strong>Early</strong>
-            <span>Stage — pilot ready</span>
+            <span>Active services</span>
           </div>
           <div class="hero__stat">
             <strong>BN</strong>
             <span>Based in Brunei</span>
           </div>
+          <div class="hero__stat">
+            <strong>🌾</strong>
+            <span>Paddy &amp; plantation</span>
+          </div>
+          <div class="hero__stat">
+            <strong>Early</strong>
+            <span>Pilot stage</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ ABOUT ══ -->
-  <section class="about-strip" id="about">
-    <div class="container about-strip__inner">
-      <div>
-        <span class="section-label">About Saqy</span>
-        <div class="about-strip__meaning">
-          <span>🌊</span>
-          <span><em>"Saqy"</em> — from Arabic, meaning <em>to water</em> or <em>to irrigate</em></span>
-        </div>
-        <h2 class="section-title">Rooted in Agriculture,<br>Driven by Data</h2>
-        <p>
-          Saqy Fly is an early-stage precision agriculture company based in Brunei. Our mission is to make drone technology genuinely useful for farmers — bridging the gap between modern data tools and real agricultural challenges faced in the field.
-        </p>
-        <div class="about-strip__mission">
-          <h4>Our Mission</h4>
-          <p>To support smarter, more efficient farming decisions through accessible drone services and honest, field-level insights.</p>
-        </div>
-        <div class="about-strip__mission mt-2">
-          <h4>Our Vision</h4>
-          <p>A future where every farmer, regardless of scale, can benefit from precision agriculture — with data they understand and can act on.</p>
-        </div>
-      </div>
-      <div class="about-strip__pillars">
-        <div class="pillar">
-          <div class="pillar__icon">🚁</div>
-          <h4>Drone Operations</h4>
-          <p>Agricultural drone spraying and aerial data collection, subject to regulatory approvals.</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar__icon">📡</div>
-          <h4>Field Monitoring</h4>
-          <p>Aerial imagery and NDVI analysis to map crop health and identify problem areas.</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar__icon">📊</div>
-          <h4>Data Insights</h4>
-          <p>Processed reports that turn raw field data into practical recommendations.</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar__icon">🤝</div>
-          <h4>Partnership Model</h4>
-          <p>We work with cooperatives, agribusinesses, and researchers to scale solutions responsibly.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ SERVICES (PREVIEW) ══ -->
-  <section class="services" id="services">
+  <!-- ══ SERVICES ══ -->
+  <section id="services" style="background:var(--grey-50);">
     <div class="container">
       <span class="section-label">What We Offer</span>
       <h2 class="section-title">Our Services</h2>
-      <p class="section-subtitle">
-        We currently offer two core services. Additional capabilities are being developed in partnership with specialists.
+      <p class="section-subtitle">Two core drone services available now, with pricing indicative until formally confirmed.</p>
+
+      <div class="services-grid">
+
+        <!-- SERVICE 1: SPRAYING -->
+        <div class="service-card">
+          <div class="service-card__header">
+            <div class="service-card__icon">💧</div>
+            <h3>Drone Crop Spraying</h3>
+            <p>Precise application of fertilisers, pesticides or growth regulators via agricultural drone.</p>
+          </div>
+          <div class="service-card__body">
+            <div class="service-card__price">
+              <span class="amount">$50</span>
+              <span class="unit">/ hour</span>
+              <span class="price-note">Indicative rate</span>
+            </div>
+            <ul class="service-card__features">
+              <li>Pre-flight field assessment included</li>
+              <li>Targeted, uniform spray coverage</li>
+              <li>Faster than manual spraying teams</li>
+              <li>Coverage area log &amp; spray report</li>
+              <li>Suitable for paddy fields &amp; plantations</li>
+            </ul>
+            <div class="availability-note">
+              ℹ️ Availability depends on equipment readiness, trained operators, field conditions and regulatory approvals from the Brunei Department of Civil Aviation.
+            </div>
+            <div class="regulatory-note">⚠️ Subject to Brunei DCA regulatory approval before operations commence.</div>
+            <div class="service-card__actions" style="margin-top:1.25rem;">
+              <a href="/services/#spraying" class="btn btn-outline">Service Details</a>
+              <a href="/contact/?service=spraying" class="btn btn-primary">Contact Us</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SERVICE 2: MONITORING -->
+        <div class="service-card">
+          <div class="service-card__header">
+            <div class="service-card__icon">🛰️</div>
+            <h3>Aerial Field Monitoring</h3>
+            <p>Drone aerial surveys delivering imagery and vegetation maps to reveal what ground inspection misses.</p>
+          </div>
+          <div class="service-card__body">
+            <div class="service-card__price">
+              <span class="amount">$20</span>
+              <span class="unit">/ lot</span>
+              <span class="price-note">Indicative rate</span>
+            </div>
+            <ul class="service-card__features">
+              <li>High-resolution aerial RGB imagery</li>
+              <li>NDVI / vegetation index mapping</li>
+              <li>Field boundary &amp; area measurement</li>
+              <li>Annotated PDF field report</li>
+              <li>Identifies waterlogging &amp; stress zones</li>
+            </ul>
+            <div class="availability-note">
+              ℹ️ Lot definition and size must be confirmed before pricing is finalised. Please contact us to discuss your field dimensions.
+            </div>
+            <div class="regulatory-note">⚠️ Subject to Brunei DCA regulatory approval before operations commence.</div>
+            <div class="service-card__actions" style="margin-top:1.25rem;">
+              <a href="/services/#monitoring" class="btn btn-outline">Service Details</a>
+              <a href="/contact/?service=monitoring" class="btn btn-primary">Contact Us</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="center mt-3" style="font-size:.83rem; color:var(--text-muted);">
+        💡 All prices are indicative only and subject to change. Final pricing confirmed on enquiry. Currency to be confirmed.
       </p>
-      <div class="services__grid">
+    </div>
+  </section>
 
-        <!-- Service 1: Spraying -->
-        <div class="service-card">
-          <div class="service-card__icon">💧</div>
-          <span class="status-badge status--available">Available</span>
-          <h3 style="margin-top:.75rem;">Drone Crop Spraying</h3>
-          <p>Precision application of fertilisers, pesticides, or growth regulators via agricultural drone — reducing chemical use and improving coverage uniformity across paddy and plantation crops.</p>
-          <ul class="service-card__details">
-            <li>Targeted application reduces input waste</li>
-            <li>Suitable for paddy fields and plantations</li>
-            <li>Faster than manual spraying teams</li>
-            <li>Subject to Brunei DCA regulatory approval</li>
-          </ul>
-          <div class="regulatory-note">⚠️ Drone operations subject to regulatory approval from Brunei Department of Civil Aviation.</div>
-        </div>
+  <!-- ══ CAROUSEL: OUR WORK IN PROGRESS ══ -->
+  <section class="carousel-section" id="work">
+    <div class="container">
+      <span class="section-label">Our Work in Progress</span>
+      <h2 class="section-title">From the Field</h2>
+      <p class="section-subtitle">
+        A look at our prototype development, field testing, and project activities. Photos of our actual work — more to be added as the project progresses.
+      </p>
+    </div>
 
-        <!-- Service 2: Monitoring -->
-        <div class="service-card">
-          <div class="service-card__icon">🛰️</div>
-          <span class="status-badge status--available">Available</span>
-          <h3 style="margin-top:.75rem;">Aerial Field Monitoring</h3>
-          <p>Drone-based aerial surveys generating multispectral imagery and NDVI maps to reveal crop health, irrigation gaps, and field variability that is invisible at ground level.</p>
-          <ul class="service-card__details">
-            <li>High-resolution aerial imagery</li>
-            <li>NDVI / vegetation index mapping</li>
-            <li>Field boundary and area measurement</li>
-            <li>Delivered as PDF report or GIS-ready data</li>
-          </ul>
-          <div class="regulatory-note">⚠️ Drone operations subject to regulatory approval from Brunei Department of Civil Aviation.</div>
-        </div>
+    <div class="container" style="position:relative;">
+      <div class="carousel-wrap" id="carousel" role="region" aria-label="Project photo carousel">
+        <div class="carousel-track" id="carouselTrack">
 
-        <!-- Service 3: Coming Soon -->
-        <div class="service-card">
-          <div class="service-card__icon">🧪</div>
-          <span class="status-badge status--development">In Development</span>
-          <h3 style="margin-top:.75rem;">Data Analytics &amp; Advisory</h3>
-          <p>Analysis of collected field data to provide season-level insights on water management, input scheduling, and yield improvement opportunities. Early-stage AI-assisted tools are experimental.</p>
-          <ul class="service-card__details">
-            <li>Seasonal crop health trend reports</li>
-            <li>Water and irrigation pattern analysis</li>
-            <li>Experimental — not a substitute for an agronomist</li>
-            <li>Seeking pilot farms to co-develop</li>
-          </ul>
-        </div>
+          <!-- SLIDE 1 -->
+          <div class="carousel-slide">
+            <div class="carousel-slide__placeholder">
+              <div class="carousel-slide__placeholder-icon">🚁</div>
+              <h4>Drone Prototype</h4>
+              <p>Replace with your drone photo.<br>Save as: <code>assets/images/carousel/drone-prototype.jpg</code></p>
+            </div>
+            <div class="carousel-caption">
+              <h4>Our Drone Prototype</h4>
+              <p>Agricultural drone under development and pre-flight testing.</p>
+            </div>
+          </div>
 
-      </div>
-      <div style="text-align:center; margin-top:2.5rem;">
-        <a href="/services/" class="btn btn-outline">Full Service Details →</a>
-      </div>
+          <!-- SLIDE 2 -->
+          <div class="carousel-slide">
+            <div class="carousel-slide__placeholder">
+              <div class="carousel-slide__placeholder-icon">🌾</div>
+              <h4>Paddy Field Testing</h4>
+              <p>Replace with your field photo.<br>Save as: <code>assets/images/carousel/paddy-field-test.jpg</code></p>
+            </div>
+            <div class="carousel-caption">
+              <h4>Paddy Field Testing</h4>
+              <p>On-site testing and data collection at a paddy field in Brunei.</p>
+            </div>
+          </div>
+
+          <!-- SLIDE 3 -->
+          <div class="carousel-slide">
+            <div class="carousel-slide__placeholder">
+              <div class="carousel-slide__placeholder-icon">💻</div>
+              <h4>Computer Vision Development</h4>
+              <p>Replace with your lab/development photo.<br>Save as: <code>assets/images/carousel/cv-development.jpg</code></p>
+            </div>
+            <div class="carousel-caption">
+              <h4>Technology Development</h4>
+              <p>Computer vision and image analysis experiments during development.</p>
+            </div>
+          </div>
+
+          <!-- SLIDE 4 -->
+          <div class="carousel-slide">
+            <div class="carousel-slide__placeholder">
+              <div class="carousel-slide__placeholder-icon">🤝</div>
+              <h4>Project Collaboration</h4>
+              <p>Replace with your team or collaboration photo.<br>Save as: <code>assets/images/carousel/team-collaboration.jpg</code></p>
+            </div>
+            <div class="carousel-caption">
+              <h4>Project Collaboration</h4>
+              <p>Working with partners and supervisors on the Saqy Fly project.</p>
+            </div>
+          </div>
+
+          <!-- SLIDE 5 -->
+          <div class="carousel-slide">
+            <div class="carousel-slide__placeholder">
+              <div class="carousel-slide__placeholder-icon">📡</div>
+              <h4>Aerial Survey</h4>
+              <p>Replace with your aerial imagery photo.<br>Save as: <code>assets/images/carousel/aerial-survey.jpg</code></p>
+            </div>
+            <div class="carousel-caption">
+              <h4>Aerial Field Survey</h4>
+              <p>Aerial imagery captured during monitoring flight tests.</p>
+            </div>
+          </div>
+
+        </div><!-- /carousel-track -->
+
+        <!-- Controls -->
+        <button class="carousel-btn carousel-btn--prev" id="carouselPrev" aria-label="Previous slide">‹</button>
+        <button class="carousel-btn carousel-btn--next" id="carouselNext" aria-label="Next slide">›</button>
+        <div class="carousel-counter" id="carouselCounter">1 / 5</div>
+
+      </div><!-- /carousel-wrap -->
+
+      <!-- Dots -->
+      <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Carousel slides"></div>
+
+      <p style="font-size:.78rem; color:var(--text-muted); text-align:center; margin-top:.75rem;">
+        📸 Photos of actual project work. Placeholders shown where photos have not yet been provided.
+        <a href="#photo-guide" style="color:var(--ocean);">How to add your photos ↓</a>
+      </p>
     </div>
   </section>
 
   <!-- ══ HOW WE WORK ══ -->
-  <section class="how" id="how">
+  <section id="how" style="background:var(--white);">
     <div class="container">
       <span class="section-label">Our Process</span>
       <h2 class="section-title">How We Work</h2>
-      <p class="section-subtitle">From first enquiry to delivered insights, here is what you can expect working with Saqy.</p>
+      <p class="section-subtitle">From first conversation to delivered field insights.</p>
       <div class="process-steps">
         <div class="process-step">
           <div class="process-step__num">1</div>
           <div class="process-step__icon">👁️</div>
           <h4>Observe</h4>
-          <p>We start by understanding your farm — crops, field layout, existing challenges, and goals.</p>
+          <p>We understand your farm, crops, layout and challenges.</p>
         </div>
         <div class="process-step">
           <div class="process-step__num">2</div>
           <div class="process-step__icon">📷</div>
           <h4>Collect</h4>
-          <p>Drone flights capture aerial imagery, spray patterns, or multispectral data across your field.</p>
+          <p>Drone flights capture imagery or spray the field.</p>
         </div>
         <div class="process-step">
           <div class="process-step__num">3</div>
           <div class="process-step__icon">⚙️</div>
           <h4>Analyse</h4>
-          <p>Raw data is processed into structured reports — maps, indices, and field observations.</p>
+          <p>Raw data is processed into maps and structured reports.</p>
         </div>
         <div class="process-step">
           <div class="process-step__num">4</div>
           <div class="process-step__icon">📋</div>
           <h4>Prepare Insights</h4>
-          <p>We prepare clear, practical summaries designed for farm managers, not just data scientists.</p>
+          <p>Clear, practical summaries designed for farm managers.</p>
         </div>
         <div class="process-step">
           <div class="process-step__num">5</div>
           <div class="process-step__icon">🎯</div>
           <h4>Support Decisions</h4>
-          <p>You receive findings and recommendations to support better input, irrigation, and management decisions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ PROBLEMS WE SOLVE ══ -->
-  <section class="problems" id="problems">
-    <div class="container">
-      <span class="section-label">The Problems</span>
-      <h2 class="section-title">Challenges We Aim to Address</h2>
-      <p class="section-subtitle">Many farming decisions in the region are made without reliable field data. We're working to change that.</p>
-      <div class="problems__grid">
-        <div class="problem-card">
-          <div class="problem-card__q">Limited field visibility at scale</div>
-          <p>Walking a large field takes hours and still misses problem areas. Aerial surveys cover the same ground in minutes.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-card__q">Inefficient water and irrigation management</div>
-          <p>Without maps showing wet or dry zones, water is applied uniformly — wasting resources and missing stressed areas.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-card__q">Decisions made without data</div>
-          <p>Input scheduling and harvest timing often rely on experience alone. Field data supports faster, more confident decisions.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-card__q">Uneven spray coverage</div>
-          <p>Manual spraying teams produce inconsistent results. Drone spraying improves coverage consistency and reduces drift.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-card__q">High cost of traditional surveying</div>
-          <p>Satellite imagery can be expensive or low-resolution for small plots. Drone surveys offer a more accessible middle ground.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-card__q">Technology that doesn't fit local needs</div>
-          <p>Off-the-shelf precision ag tools are often built for large-scale Western farms. We're designing for Brunei's context.</p>
+          <p>Findings and recommendations to guide input and irrigation decisions.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ══ WHO WE SERVE ══ -->
-  <section class="customers" id="customers">
+  <section id="customers" style="background:var(--grey-50);">
     <div class="container">
       <span class="section-label">Who We Serve</span>
       <h2 class="section-title">Our Customers</h2>
-      <p class="section-subtitle">
-        Saqy is designed for a range of agricultural stakeholders. We are actively looking for pilot partners — if your organisation fits, we want to hear from you.
-      </p>
-      <div class="customers__grid">
+      <p class="section-subtitle">We're actively looking for pilot partners — if your organisation fits, we'd love to hear from you.</p>
+      <div class="customers-grid">
         <div class="customer-card">
           <div class="customer-card__icon">🌾</div>
           <h4>Paddy Farmers</h4>
-          <p>Rice and paddy growers looking to improve spray coverage, map waterlogging, or track seasonal crop health.</p>
+          <p>Rice and paddy growers needing spray coverage and crop health maps.</p>
         </div>
         <div class="customer-card">
           <div class="customer-card__icon">🌴</div>
           <h4>Plantation Operators</h4>
-          <p>Oil palm and other plantation managers needing efficient aerial monitoring and targeted input application.</p>
+          <p>Oil palm and plantation managers for aerial monitoring and targeted spraying.</p>
         </div>
         <div class="customer-card">
           <div class="customer-card__icon">🏘️</div>
           <h4>Farming Cooperatives</h4>
-          <p>Groups managing shared farmland who benefit from pooled drone services across multiple plots.</p>
+          <p>Groups managing shared farmland benefiting from pooled drone services.</p>
         </div>
         <div class="customer-card">
           <div class="customer-card__icon">🏢</div>
           <h4>Agribusinesses</h4>
-          <p>Commercial agriculture companies seeking drone data as part of broader precision farming programmes.</p>
+          <p>Commercial agriculture companies seeking drone data as part of broader programmes.</p>
         </div>
         <div class="customer-card">
           <div class="customer-card__icon">🔬</div>
           <h4>Researchers</h4>
-          <p>University and research institutions requiring aerial data collection for agricultural trials and studies.</p>
+          <p>University and research institutions needing aerial data for agricultural trials.</p>
         </div>
         <div class="customer-card">
           <div class="customer-card__icon">🌿</div>
           <h4>Smallholders</h4>
-          <p>Individual farmers with smaller plots who want affordable access to drone technology without owning equipment.</p>
+          <p>Individual farmers wanting affordable drone access without owning equipment.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ CONTACT ══ -->
-  <section class="contact" id="contact">
-    <div class="container contact__inner">
-      <div class="contact__info">
-        <span class="section-label">Get In Touch</span>
-        <h2>Work With Us</h2>
-        <p>Whether you're interested in a consultation, a quotation, or joining us as a pilot partner — we'd love to hear from you.</p>
-
-        <div class="contact__detail">
-          <div class="contact__detail__icon">✉️</div>
-          <div>
-            <strong>Email</strong>
-            <span>s.emeskn@gmail.com</span>
-          </div>
-        </div>
-        <div class="contact__detail">
-          <div class="contact__detail__icon">📍</div>
-          <div>
-            <strong>Location</strong>
-            <span>Brunei Darussalam</span>
-          </div>
-        </div>
-        <div class="contact__detail">
-          <div class="contact__detail__icon">🕐</div>
-          <div>
-            <strong>Response Time</strong>
-            <span>We aim to reply within 2–3 business days.</span>
-          </div>
-        </div>
-
-        <div class="contact__stage-note">
-          <strong>🌱 Early-stage company</strong><br>
-          Saqy is actively looking for pilot partners. If you have a farm, cooperative, or research project and want to explore what drone services could do for you — even informally — please reach out. Your feedback shapes what we build.
-        </div>
+  <!-- ══ CTA BAND ══ -->
+  <div class="cta-band">
+    <div class="container">
+      <h2>Ready to explore what drones can do for your farm?</h2>
+      <p>Tell us about your land, your crops and the challenges you face. We'll respond within 2–3 business days.</p>
+      <div class="cta-band__actions">
+        <a href="/contact/" class="btn btn-white">Contact Us</a>
+        <a href="/services/" class="btn btn-outline" style="border-color:rgba(255,255,255,.5);color:#fff;">View Services</a>
       </div>
+    </div>
+  </div>
 
-      <div>
-        <form class="contact__form" id="contactForm">
-          <h3 style="margin-bottom:1.5rem;">Send an Enquiry</h3>
-
-          <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" required placeholder="Your name" />
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" required placeholder="your@email.com" />
-          </div>
-
-          <div class="form-group">
-            <label for="organisation">Organisation / Farm Name</label>
-            <input type="text" id="organisation" name="organisation" placeholder="Optional" />
-          </div>
-
-          <div class="form-group">
-            <label for="enquiry_type">Type of Enquiry *</label>
-            <select id="enquiry_type" name="enquiry_type" required>
-              <option value="" disabled selected>Select enquiry type</option>
-              <option value="consultation">General Consultation</option>
-              <option value="quotation">Request a Quotation</option>
-              <option value="pilot">Pilot Partnership</option>
-              <option value="research">Research Collaboration</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message *</label>
-            <textarea id="message" name="message" required placeholder="Tell us about your farm, the challenges you face, or what you'd like to explore..."></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary form__submit">Send Message</button>
-          <div class="form__notice">
-            Form service not yet configured. Your message will not be sent until a form endpoint is connected. <a href="https://formspree.io" target="_blank" rel="noopener">Set up Formspree</a> to activate.
-          </div>
-          <div class="form__status" id="formStatus"></div>
-        </form>
+  <!-- ══ PHOTO GUIDE (anchor for link above) ══ -->
+  <section id="photo-guide" style="background:var(--white); padding:3rem 0;">
+    <div class="container">
+      <h3 style="margin-bottom:1rem;">📸 How to Add Your Photos to the Carousel</h3>
+      <p style="margin-bottom:1.5rem; font-size:.9rem;">Save your photos using the filenames below and place them in the <code>assets/images/carousel/</code> folder. The carousel will automatically show them.</p>
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:.85rem;">
+          <thead>
+            <tr style="background:var(--grey-100);">
+              <th style="padding:.6rem 1rem; text-align:left; border:1px solid var(--border);">Slide</th>
+              <th style="padding:.6rem 1rem; text-align:left; border:1px solid var(--border);">Filename to use</th>
+              <th style="padding:.6rem 1rem; text-align:left; border:1px solid var(--border);">What to photograph</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:.6rem 1rem; border:1px solid var(--border);">Slide 1</td><td style="padding:.6rem 1rem; border:1px solid var(--border);"><code>assets/images/carousel/drone-prototype.jpg</code></td><td style="padding:.6rem 1rem; border:1px solid var(--border);">Your drone hardware / prototype</td></tr>
+            <tr style="background:var(--grey-50);"><td style="padding:.6rem 1rem; border:1px solid var(--border);">Slide 2</td><td style="padding:.6rem 1rem; border:1px solid var(--border);"><code>assets/images/carousel/paddy-field-test.jpg</code></td><td style="padding:.6rem 1rem; border:1px solid var(--border);">Paddy field activities / on-site testing</td></tr>
+            <tr><td style="padding:.6rem 1rem; border:1px solid var(--border);">Slide 3</td><td style="padding:.6rem 1rem; border:1px solid var(--border);"><code>assets/images/carousel/cv-development.jpg</code></td><td style="padding:.6rem 1rem; border:1px solid var(--border);">Lab / computer / development work</td></tr>
+            <tr style="background:var(--grey-50);"><td style="padding:.6rem 1rem; border:1px solid var(--border);">Slide 4</td><td style="padding:.6rem 1rem; border:1px solid var(--border);"><code>assets/images/carousel/team-collaboration.jpg</code></td><td style="padding:.6rem 1rem; border:1px solid var(--border);">Team meetings, project collaboration</td></tr>
+            <tr><td style="padding:.6rem 1rem; border:1px solid var(--border);">Slide 5</td><td style="padding:.6rem 1rem; border:1px solid var(--border);"><code>assets/images/carousel/aerial-survey.jpg</code></td><td style="padding:.6rem 1rem; border:1px solid var(--border);">Aerial imagery / drone-captured field photos</td></tr>
+          </tbody>
+        </table>
       </div>
+      <p style="margin-top:1rem; font-size:.82rem; color:var(--text-muted);">Recommended: JPEG or PNG, at least 1200×800 px, under 500 KB each. Use a free tool like <a href="https://squoosh.app" target="_blank">squoosh.app</a> to compress before uploading.</p>
     </div>
   </section>
 
@@ -430,19 +409,16 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <div class="footer__logo">
-          <img src="images/logo.png" alt="Saqy Fly" style="height:52px; width:auto;" />
-        </div>
-        <p>Every Drop. Every Crop. Every Future.<br>Precision agriculture drone services for Brunei and Southeast Asia. Early-stage · Seeking pilot partners.</p>
+        <img src="images/logo.png" alt="Saqy Fly" />
+        <p>Every Drop. Every Crop. Every Future.<br>Precision agriculture drone services in Brunei Darussalam.</p>
       </div>
       <div class="footer__col">
         <h4>Navigate</h4>
         <ul>
-          <li><a href="/#about">About</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
           <li><a href="/services/">Services</a></li>
-          <li><a href="/#how">How We Work</a></li>
-          <li><a href="/#problems">Problems We Solve</a></li>
-          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/contact/">Contact Us</a></li>
         </ul>
       </div>
       <div class="footer__col">
@@ -450,7 +426,6 @@
         <ul>
           <li><a href="/services/#spraying">Drone Crop Spraying</a></li>
           <li><a href="/services/#monitoring">Aerial Field Monitoring</a></li>
-          <li><a href="/services/#analytics">Data Analytics (Upcoming)</a></li>
         </ul>
       </div>
     </div>
@@ -460,6 +435,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/carousel.js"></script>
 </body>
 </html>

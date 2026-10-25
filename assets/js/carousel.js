@@ -1,0 +1,121 @@
+/**
+ * SaqyFly Carousel Component
+ * Handles: Auto-check for existing images vs neutral placeholders,
+ * Previous / Next navigation, Dots, Touch swipe, Keyboard navigation.
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('carouselTrack');
+  const prevBtn = document.getElementById('carouselPrev');
+  const nextBtn = document.getElementById('carouselNext');
+  const dotsContainer = document.getElementById('carouselDots');
+  const counter = document.getElementById('carouselCounter');
+
+  if (!track) return;
+
+  const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+
+  // Image files corresponding to slides
+  const slideImages = [
+    { path: 'assets/images/carousel/drone-prototype.jpg', alt: 'Drone prototype testing' },
+    { path: 'assets/images/carousel/paddy-field-test.jpg', alt: 'Paddy field testing in Brunei' },
+    { path: 'assets/images/carousel/cv-development.jpg', alt: 'Computer vision and software development' },
+    { path: 'assets/images/carousel/team-collaboration.jpg', alt: 'Project collaboration session' },
+    { path: 'assets/images/carousel/aerial-survey.jpg', alt: 'Aerial survey field view' }
+  ];
+
+  // Dynamically replace placeholder with image if it loads successfully
+  slides.forEach((slide, idx) => {
+    if (slideImages[idx]) {
+      const img = new Image();
+      img.src = slideImages[idx].path;
+      img.alt = slideImages[idx].alt;
+      img.onload = () => {
+        const placeholder = slide.querySelector('.carousel-slide__placeholder');
+        if (placeholder) {
+          slide.replaceChild(img, placeholder);
+        }
+      };
+      // If error/missing, the neutral placeholder remains intact
+    }
+  });
+
+  // Create indicator dots
+  dotsContainer.innerHTML = '';
+  slides.forEach((_, idx) => {
+    const dot = document.createElement('button');
+    dot.className = `carousel-dot ${idx === 0 ? 'active' : ''}`;
+    dot.setAttribute('role', 'tab');
+    dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+    dot.addEventListener('click', () => goToSlide(idx));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = Array.from(dotsContainer.querySelectorAll('.carousel-dot'));
+
+  function updateSlide() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === currentIndex);
+    });
+    if (counter) {
+      counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
+    }
+  }
+
+  function goToSlide(index) {
+    currentIndex = (index + totalSlides) % totalSlides;
+    updateSlide();
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+  }
+
+  // Keyboard accessibility
+  document.addEventListener('keydown', (e) => {
+    const carousel = document.getElementById('carousel');
+    if (!carousel) return;
+    const rect = carousel.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom > 0;
+    if (!inView) return;
+
+    if (e.key === 'ArrowLeft') {
+      goToSlide(currentIndex - 1);
+    } else if (e.key === 'ArrowRight') {
+      goToSlide(currentIndex + 1);
+    }
+  });
+
+  // Mobile Touch Swipe
+  let startX = 0;
+  let endX = 0;
+
+  track.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  track.addEventListener('touchmove', (e) => {
+    endX = e.touches[0].clientX;
+  }, { passive: true });
+
+  track.addEventListener('touchend', () => {
+    const diff = startX - endX;
+    if (Math.abs(diff) > 40 && endX !== 0) {
+      if (diff > 0) {
+        goToSlide(currentIndex + 1);
+      } else {
+        goToSlide(currentIndex - 1);
+      }
+    }
+    startX = 0;
+    endX = 0;
+  });
+
+  updateSlide();
+});

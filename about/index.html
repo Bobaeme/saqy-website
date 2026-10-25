@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Saqy Fly Precision Agriculture</title>
+  <meta name="description" content="Learn about Saqy Fly's background, mission, technology vision, and project supervision in Brunei." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230077b6'/><text x='5' y='23' font-size='18' font-weight='900' fill='%23fff'>SF</text></svg>" />
+</head>
+<body>
+
+  <!-- ══ NAV ══ -->
+  <nav class="nav" id="mainNav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo">
+        <img src="../images/logo.png" alt="Saqy Fly" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/" class="active">About</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
+      </ul>
+      <a href="/contact/" class="btn btn-primary nav__cta">Contact Us</a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav__mobile" id="mobileNav" role="dialog" aria-label="Mobile navigation">
+    <button class="nav__close" id="navClose" aria-label="Close menu">✕</button>
+    <a href="/" onclick="closeMobileNav()">Home</a>
+    <a href="/about/" onclick="closeMobileNav()">About</a>
+    <a href="/services/" onclick="closeMobileNav()">Services</a>
+    <a href="/contact/" onclick="closeMobileNav()">Contact Us</a>
+    <a href="/contact/" class="btn btn-primary" onclick="closeMobileNav()">Contact Us</a>
+  </div>
+
+  <!-- ══ PAGE HERO ══ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>About</span>
+      </div>
+      <h1>About Saqy Fly</h1>
+      <p>
+        Pioneering accessible, data-driven agricultural drone solutions tailored for Brunei and regional farming communities.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ MISSION & BACKGROUND ══ -->
+  <section class="about-mission">
+    <div class="container about-mission__inner">
+      <div>
+        <span class="section-label">Background &amp; Ethos</span>
+        <div class="name-meaning">
+          <span>🌊</span>
+          <span><strong>"Saqy" (سقي)</strong> — Arabic root signifying <em>to water</em> or <em>to irrigate</em>.</span>
+        </div>
+        <h2 class="section-title">Rooted in Farming,<br>Elevated by Technology</h2>
+        <p>
+          Saqy Fly originated from the desire to make advanced aerial technology practical, affordable, and actionable for local farmers. Rather than complicated tools built for massive foreign agribusinesses, we focus on modular drone applications that solve day-to-day challenges in paddy cultivation, plantations, and specialty crops.
+        </p>
+
+        <div class="mission-vision">
+          <div class="mv-box">
+            <h4>Our Mission</h4>
+            <p>To support smarter, more sustainable farming decisions through reliable aerial spraying and monitoring services.</p>
+          </div>
+          <div class="mv-box">
+            <h4>Our Vision</h4>
+            <p>Every Drop. Every Crop. Every Future. Empowering every agricultural steward with data-driven clarity and efficiency.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-mission__cards">
+        <div class="mission-card">
+          <div class="mission-card__icon">🎯</div>
+          <h4>Targeted Efficiency</h4>
+          <p>Delivering inputs only where necessary, preserving soil health and reducing chemical consumption.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-card__icon">📊</div>
+          <h4>Practical Field Data</h4>
+          <p>Providing straightforward visual maps and summaries rather than overwhelming raw data.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-card__icon">🌱</div>
+          <h4>Sustainability</h4>
+          <p>Conserving precious water and resource inputs while protecting field personnel safety.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-card__icon">🤝</div>
+          <h4>Partnership Focus</h4>
+          <p>Working closely with local cooperatives, researchers, and farmers in pilot phases.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROJECT SUPERVISION & GUIDANCE (Requirement 2) ══ -->
+  <section class="supervision bg-grey">
+    <div class="container">
+      <div class="center" style="max-width:700px; margin:0 auto;">
+        <span class="section-label">Team &amp; Governance</span>
+        <h2 class="section-title">Project Supervision &amp; Guidance</h2>
+        <p class="section-subtitle" style="margin:0 auto;">
+          Our initiative is guided by ongoing academic research, technical supervision, and cooperative collaboration.
+        </p>
+      </div>
+
+      <div class="supervision__grid">
+
+        <!-- Column 1: Project Lead -->
+        <div class="supervision-card">
+          <span class="supervision-card__role">Project Lead</span>
+          <div class="supervision-card__avatar">👨‍💻</div>
+          <h4>[Project Lead Name]</h4>
+          <div class="supervision-card__title">Founder &amp; Technical Lead</div>
+          <div class="supervision-card__dept">Saqy Fly Initiative</div>
+          <div class="supervision-card__placeholder">
+            ✏️ Replace with your name and brief bio
+          </div>
+        </div>
+
+        <!-- Column 2: Project Supervisor -->
+        <div class="supervision-card">
+          <span class="supervision-card__role">Project Supervisor</span>
+          <div class="supervision-card__avatar">🎓</div>
+          <h4>[Supervisor Name]</h4>
+          <div class="supervision-card__title">[Academic Title / Designation]</div>
+          <div class="supervision-card__dept">[Department / Faculty / Institution]</div>
+          <div class="supervision-card__placeholder">
+            ✏️ Replace with supervisor's title &amp; department once confirmed
+          </div>
+        </div>
+
+        <!-- Column 3: Project Partners -->
+        <div class="supervision-card">
+          <span class="supervision-card__role">Project Partners</span>
+          <div class="supervision-card__avatar">🤝</div>
+          <h4>[Collaborating Entity]</h4>
+          <div class="supervision-card__title">Agricultural &amp; Pilot Partners</div>
+          <div class="supervision-card__dept">Brunei Darussalam</div>
+          <div class="supervision-card__placeholder">
+            ✏️ Replace with confirmed pilot farms or industry partners
+          </div>
+        </div>
+
+      </div>
+
+      <p class="center mt-3" style="font-size:.78rem; color:var(--text-muted);">
+        Notice: Academic or institutional affiliations are for technical supervision and project guidance purposes. No formal institutional endorsement is implied without verified consent.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ CTA BAND ══ -->
+  <div class="cta-band">
+    <div class="container">
+      <h2>Collaborate or Pilot with Us</h2>
+      <p>We are seeking pilot farm partners, research collaborations, and community stakeholders.</p>
+      <div class="cta-band__actions">
+        <a href="/contact/" class="btn btn-white">Contact Us</a>
+        <a href="/services/" class="btn btn-outline" style="border-color:rgba(255,255,255,.5);color:#fff;">Explore Services</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="../images/logo.png" alt="Saqy Fly" />
+        <p>Every Drop. Every Crop. Every Future.<br>Precision agriculture drone services in Brunei Darussalam.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/contact/">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/#spraying">Crop Spraying Service</a></li>
+          <li><a href="/services/#monitoring">Aerial Field Monitoring</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> Saqy Fly. All rights reserved.</span>
+      <span>Brunei Darussalam · Drone operations subject to DCA approval.</span>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

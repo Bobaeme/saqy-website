@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Saqy Fly Precision Agriculture</title>
+  <meta name="description" content="Get in touch with Saqy Fly for consultations, quotation requests, and pilot project partnerships." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230077b6'/><text x='5' y='23' font-size='18' font-weight='900' fill='%23fff'>SF</text></svg>" />
+</head>
+<body>
+
+  <!-- ══ NAV ══ -->
+  <nav class="nav" id="mainNav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo">
+        <img src="../images/logo.png" alt="Saqy Fly" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/contact/" class="active">Contact Us</a></li>
+      </ul>
+      <a href="/contact/" class="btn btn-primary nav__cta">Contact Us</a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav__mobile" id="mobileNav" role="dialog" aria-label="Mobile navigation">
+    <button class="nav__close" id="navClose" aria-label="Close menu">✕</button>
+    <a href="/" onclick="closeMobileNav()">Home</a>
+    <a href="/about/" onclick="closeMobileNav()">About</a>
+    <a href="/services/" onclick="closeMobileNav()">Services</a>
+    <a href="/contact/" onclick="closeMobileNav()">Contact Us</a>
+    <a href="/contact/" class="btn btn-primary" onclick="closeMobileNav()">Contact Us</a>
+  </div>
+
+  <!-- ══ PAGE HERO ══ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>Contact</span>
+      </div>
+      <h1>Contact Us</h1>
+      <p>
+        Whether you are seeking an initial consultation, requesting a quotation, or exploring a pilot partnership, we are ready to discuss your agricultural requirements.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT SECTION ══ -->
+  <section style="background:var(--white);">
+    <div class="container contact-grid">
+
+      <!-- LEFT: Details -->
+      <div class="contact-info">
+        <span class="section-label">Direct Communication</span>
+        <h3>Connect With Saqy Fly</h3>
+        <p>
+          Fill out the enquiry form with your project specifics or contact our team directly via email.
+        </p>
+
+        <div class="contact-detail">
+          <div class="contact-detail__icon">✉️</div>
+          <div>
+            <strong>Direct Email</strong>
+            <span><a href="mailto:s.emeskn@gmail.com">s.emeskn@gmail.com</a></span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail__icon">📍</div>
+          <div>
+            <strong>Operational Base</strong>
+            <span>Brunei Darussalam</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail__icon">⏱️</div>
+          <div>
+            <strong>Response Time</strong>
+            <span>Within 2–3 business days</span>
+          </div>
+        </div>
+
+        <div class="stage-note">
+          <strong>🌱 Early-Stage &amp; Pilot Opportunities</strong><br>
+          We are actively looking for pilot farm plots and field trial collaborators across Brunei. If you manage paddy, plantation, or specialty acreage, reach out to trial our drone services.
+        </div>
+
+        <div class="regulatory-note" style="margin-top:1.5rem;">
+          ⚠️ <strong>Regulatory Disclaimer:</strong> All drone flights are conducted strictly subject to regulatory permits and guidelines issued by the Brunei Department of Civil Aviation.
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div>
+        <form class="contact-form" id="enquiryForm" novalidate>
+          <h3 style="margin-bottom:1.25rem;">Submit an Enquiry</h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="e.g. Haji Ahmad" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="e.g. name@domain.com" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="organisation">Farm / Organisation Name</label>
+              <input type="text" id="organisation" name="organisation" placeholder="e.g. Wasan Paddy Co-op" />
+            </div>
+            <div class="form-group">
+              <label for="location">Field Location / District</label>
+              <input type="text" id="location" name="location" placeholder="e.g. Mukim Pengkalan Batu, Brunei-Muara" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="enquiry_type">Enquiry Type *</label>
+              <select id="enquiry_type" name="enquiry_type" required>
+                <option value="Quotation Request" selected>Quotation Request</option>
+                <option value="Consultation Request">Consultation Request</option>
+                <option value="Pilot Project Enquiry">Pilot Project Enquiry</option>
+                <option value="Research Collaboration">Research Collaboration</option>
+                <option value="General Question">General Question</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="service_requested">Service Requested</label>
+              <select id="service_requested" name="service_requested">
+                <option value="Both / Not Sure">Both / Not Sure</option>
+                <option value="Crop Spraying Service">Crop Spraying Service ($50/hr indicative)</option>
+                <option value="Aerial Field Monitoring">Aerial Field Monitoring ($20/lot indicative)</option>
+                <option value="Custom Pilot Trial">Custom Pilot Trial</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Project Details &amp; Field Acreage *</label>
+            <textarea id="message" name="message" required placeholder="Describe your field size, crop type, challenges (e.g., spraying schedule, drainage visibility), or pilot goals..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary form__submit" id="submitBtn">
+            Send Enquiry
+          </button>
+
+          <div class="form__notice">
+            🔒 Enquiries are securely processed and dispatched via Google Apps Script to our project mailbox.
+          </div>
+
+          <div class="form__status" id="formStatus"></div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="../images/logo.png" alt="Saqy Fly" />
+        <p>Every Drop. Every Crop. Every Future.<br>Precision agriculture drone services in Brunei Darussalam.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/contact/">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/#spraying">Crop Spraying Service</a></li>
+          <li><a href="/services/#monitoring">Aerial Field Monitoring</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> Saqy Fly. All rights reserved.</span>
+      <span>Brunei Darussalam · Drone operations subject to DCA approval.</span>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

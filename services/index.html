@@ -4,322 +4,180 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services — Saqy Fly Precision Agriculture</title>
-  <meta name="description" content="Saqy Fly offers drone crop spraying and aerial field monitoring services for paddy and plantation farmers in Brunei. Every Drop. Every Crop. Every Future." />
+  <meta name="description" content="Explore our two core drone services: Crop Spraying Service and Aerial Field Monitoring for paddy and plantation farming in Brunei." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <style>
-    .page-hero {
-      padding: 140px 0 5rem;
-      background:
-        radial-gradient(ellipse 50% 80% at 80% 50%, rgba(0,200,83,.08) 0%, transparent 60%),
-        var(--bg-dark);
-      border-bottom: 1px solid var(--border);
-    }
-    .service-detail {
-      padding: 5rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .service-detail:last-child { border-bottom: none; }
-    .service-detail__inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-    .service-detail__inner.reverse { direction: rtl; }
-    .service-detail__inner.reverse > * { direction: ltr; }
-    .service-detail__visual {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      aspect-ratio: 4/3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 1rem;
-      position: relative;
-    }
-    .service-detail__visual-label {
-      position: absolute;
-      bottom: 1rem; left: 50%; transform: translateX(-50%);
-      background: rgba(13,17,23,.85);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      padding: .3rem .9rem;
-      font-size: .72rem;
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-    .service-detail__visual svg { width: 55%; opacity: .85; }
-    .includes-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: .75rem;
-      margin-top: 1.5rem;
-    }
-    .include-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: .9rem 1rem;
-      font-size: .85rem;
-      display: flex;
-      gap: .6rem;
-      align-items: flex-start;
-    }
-    .include-item::before { content: '✓'; color: var(--accent); font-weight: 800; flex-shrink: 0; }
-    .not-included {
-      margin-top: 1.25rem;
-      padding: 1rem;
-      background: rgba(255,80,80,.05);
-      border: 1px solid rgba(255,80,80,.15);
-      border-radius: var(--radius-sm);
-      font-size: .82rem;
-      color: var(--text-muted);
-    }
-    .not-included strong { color: #ff8080; }
-    .cta-band {
-      background: var(--bg-section);
-      padding: 5rem 0;
-      text-align: center;
-    }
-    .cta-band h2 { margin-bottom: 1rem; }
-    .cta-band p { max-width: 560px; margin: 0 auto 2rem; }
-    .cta-band__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    @media (max-width: 900px) {
-      .service-detail__inner { grid-template-columns: 1fr; }
-      .service-detail__inner.reverse { direction: ltr; }
-      .service-detail__visual { display: none; }
-    }
-    @media (max-width: 600px) {
-      .includes-grid { grid-template-columns: 1fr; }
-    }
-  </style>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2300c853'/><text x='6' y='24' font-size='20' font-weight='900' fill='%23000'>S</text></svg>" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230077b6'/><text x='5' y='23' font-size='18' font-weight='900' fill='%23fff'>SF</text></svg>" />
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
+  <!-- ══ NAV ══ -->
+  <nav class="nav" id="mainNav">
     <div class="container nav__inner">
       <a href="/" class="nav__logo">
-        <img src="../images/logo.png" alt="Saqy Fly logo" class="nav__logo-img" />
+        <img src="../images/logo.png" alt="Saqy Fly" />
       </a>
       <ul class="nav__links">
-        <li><a href="/#about">About</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
         <li><a href="/services/" class="active">Services</a></li>
-        <li><a href="/#how">How We Work</a></li>
-        <li><a href="/#contact">Contact</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
       </ul>
-      <a href="/#contact" class="btn btn-primary nav__cta">Enquire Now</a>
+      <a href="/contact/" class="btn btn-primary nav__cta">Contact Us</a>
       <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
-  <div class="nav__mobile" id="mobileNav">
+
+  <!-- Mobile Nav -->
+  <div class="nav__mobile" id="mobileNav" role="dialog" aria-label="Mobile navigation">
     <button class="nav__close" id="navClose" aria-label="Close menu">✕</button>
-    <a href="/#about" onclick="closeMobileNav()">About</a>
+    <a href="/" onclick="closeMobileNav()">Home</a>
+    <a href="/about/" onclick="closeMobileNav()">About</a>
     <a href="/services/" onclick="closeMobileNav()">Services</a>
-    <a href="/#how" onclick="closeMobileNav()">How We Work</a>
-    <a href="/#contact" onclick="closeMobileNav()">Contact</a>
-    <a href="/#contact" class="btn btn-primary" onclick="closeMobileNav()">Enquire Now</a>
+    <a href="/contact/" onclick="closeMobileNav()">Contact Us</a>
+    <a href="/contact/" class="btn btn-primary" onclick="closeMobileNav()">Contact Us</a>
   </div>
 
-  <!-- PAGE HERO -->
-  <div class="page-hero">
+  <!-- ══ PAGE HERO ══ -->
+  <section class="page-hero">
     <div class="container">
-      <span class="section-label">What We Offer</span>
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>Services</span>
+      </div>
       <h1>Our Services</h1>
-      <p style="font-size:1.1rem; max-width:600px; margin-top:.75rem;">
-        Saqy currently offers two operational drone services, with data analytics in development. All drone operations are subject to Brunei Department of Civil Aviation approvals.
+      <p>
+        Saqy Fly provides two targeted agricultural drone services designed for practical application in paddy and plantation farming.
       </p>
-      <div class="regulatory-note" style="display:inline-block; margin-top:1.5rem;">
-        ⚠️ No fixed pricing is published — enquire for a quotation based on your field size and requirements.
-      </div>
-    </div>
-  </div>
-
-  <!-- ── SERVICE 1: SPRAYING ── -->
-  <section class="service-detail" id="spraying" style="background:var(--bg-dark);">
-    <div class="container service-detail__inner">
-      <div>
-        <div class="service-card__icon">💧</div>
-        <span class="status-badge status--available" style="margin:.75rem 0; display:inline-flex;">Available</span>
-        <h2 style="margin-top:.5rem;">Drone Crop Spraying</h2>
-        <p style="margin-top:.75rem; font-size:1rem;">
-          Agricultural drones equipped with spray tanks apply fertilisers, pesticides, herbicides, or growth regulators across your field with controlled, even coverage — far faster than a manual team and with less drift than ground machinery.
-        </p>
-        <p style="margin-top:1rem; font-size:.95rem;">
-          This service is suited to paddy fields, oil palm, fruit orchards, and other plantation crops where ground access is difficult or where chemical use needs to be optimised.
-        </p>
-        <h3 style="margin-top:2rem; margin-bottom:1rem;">What's Included</h3>
-        <div class="includes-grid">
-          <div class="include-item">Pre-flight field assessment</div>
-          <div class="include-item">Spray plan preparation</div>
-          <div class="include-item">Drone spray operation</div>
-          <div class="include-item">Coverage map report</div>
-          <div class="include-item">Application volume log</div>
-          <div class="include-item">Post-spray briefing</div>
-        </div>
-        <div class="not-included">
-          <strong>Not included:</strong> Supply of chemicals or fertilisers. Customer must provide approved agrochemicals. We do not advise on fertiliser type or rates — consult a qualified agronomist.
-        </div>
-        <div class="regulatory-note">⚠️ All drone spraying operations are subject to Brunei DCA approval and applicable pesticide regulations. We will confirm regulatory status before confirming bookings.</div>
-        <a href="/#contact" class="btn btn-primary mt-3">Request a Quotation</a>
-      </div>
-      <div class="service-detail__visual">
-        <!-- Spray drone SVG -->
-        <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="78" y="52" width="44" height="26" rx="7" fill="#1a2a1a" stroke="#00c853" stroke-width="1.5"/>
-          <!-- Tank -->
-          <rect x="88" y="60" width="24" height="14" rx="4" fill="#00c853" opacity=".2" stroke="#00c853" stroke-width="1"/>
-          <!-- Arms -->
-          <line x1="78" y1="60" x2="34" y2="44" stroke="#00c853" stroke-width="2.2" stroke-linecap="round"/>
-          <line x1="122" y1="60" x2="166" y2="44" stroke="#00c853" stroke-width="2.2" stroke-linecap="round"/>
-          <line x1="78" y1="70" x2="34" y2="86" stroke="#00c853" stroke-width="2.2" stroke-linecap="round"/>
-          <line x1="122" y1="70" x2="166" y2="86" stroke="#00c853" stroke-width="2.2" stroke-linecap="round"/>
-          <!-- Props -->
-          <ellipse cx="34" cy="43" rx="20" ry="5" fill="#00c85330" stroke="#00c853" stroke-width="1"/>
-          <ellipse cx="166" cy="43" rx="20" ry="5" fill="#00c85330" stroke="#00c853" stroke-width="1"/>
-          <ellipse cx="34" cy="87" rx="20" ry="5" fill="#00c85330" stroke="#00c853" stroke-width="1"/>
-          <ellipse cx="166" cy="87" rx="20" ry="5" fill="#00c85330" stroke="#00c853" stroke-width="1"/>
-          <!-- Nozzles -->
-          <line x1="88" y1="78" x2="88" y2="90" stroke="#00c853" stroke-width="1.5"/>
-          <line x1="100" y1="78" x2="100" y2="90" stroke="#00c853" stroke-width="1.5"/>
-          <line x1="112" y1="78" x2="112" y2="90" stroke="#00c853" stroke-width="1.5"/>
-          <!-- Spray -->
-          <path d="M82 95 Q88 108 76 118" stroke="#00c853" stroke-width="1" opacity=".4" fill="none" stroke-dasharray="3 2"/>
-          <path d="M90 95 Q95 110 88 122" stroke="#00c853" stroke-width="1" opacity=".5" fill="none" stroke-dasharray="3 2"/>
-          <path d="M100 95 Q100 112 100 125" stroke="#00c853" stroke-width="1" opacity=".6" fill="none" stroke-dasharray="3 2"/>
-          <path d="M110 95 Q105 110 112 122" stroke="#00c853" stroke-width="1" opacity=".5" fill="none" stroke-dasharray="3 2"/>
-          <path d="M118 95 Q112 108 124 118" stroke="#00c853" stroke-width="1" opacity=".4" fill="none" stroke-dasharray="3 2"/>
-          <!-- Ground -->
-          <rect x="30" y="136" width="140" height="8" rx="3" fill="#00c853" opacity=".08"/>
-        </svg>
-        <span class="service-detail__visual-label">🎨 Illustration — not actual equipment</span>
-      </div>
     </div>
   </section>
 
-  <!-- ── SERVICE 2: MONITORING ── -->
-  <section class="service-detail" id="monitoring" style="background:var(--bg-section);">
-    <div class="container service-detail__inner reverse">
-      <div>
-        <div class="service-card__icon">🛰️</div>
-        <span class="status-badge status--available" style="margin:.75rem 0; display:inline-flex;">Available</span>
-        <h2 style="margin-top:.5rem;">Aerial Field Monitoring</h2>
-        <p style="margin-top:.75rem; font-size:1rem;">
-          Our drones fly systematic grid patterns over your field, capturing high-resolution RGB and multispectral imagery. The data is processed into maps that reveal what ground-level inspection misses: waterlogged zones, uneven growth, pest patches, and irrigation coverage gaps.
-        </p>
-        <p style="margin-top:1rem; font-size:.95rem;">
-          Output is delivered as a practical report and, where applicable, GIS-compatible files for further analysis.
-        </p>
-        <h3 style="margin-top:2rem; margin-bottom:1rem;">What's Included</h3>
-        <div class="includes-grid">
-          <div class="include-item">Pre-flight field walkthrough</div>
-          <div class="include-item">Systematic aerial survey flight</div>
-          <div class="include-item">High-resolution RGB imagery</div>
-          <div class="include-item">NDVI / vegetation index map</div>
-          <div class="include-item">Field area measurement</div>
-          <div class="include-item">Annotated PDF report</div>
-        </div>
-        <div class="not-included">
-          <strong>Important:</strong> NDVI maps identify zones of vegetation stress or difference — they do not diagnose specific nutrient deficiencies or diseases. Results should be reviewed alongside agronomist assessment and, where needed, laboratory soil or tissue analysis.
-        </div>
-        <div class="regulatory-note">⚠️ Drone survey operations are subject to Brunei DCA approval. We will confirm operational clearance before scheduling flights.</div>
-        <a href="/#contact" class="btn btn-primary mt-3">Request a Quotation</a>
-      </div>
-      <div class="service-detail__visual">
-        <!-- Monitoring drone SVG -->
-        <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Field grid below -->
-          <rect x="20" y="110" width="160" height="35" rx="4" fill="#00c853" opacity=".05" stroke="#00c853" stroke-width=".5"/>
-          <line x1="60" y1="110" x2="60" y2="145" stroke="#00c853" stroke-width=".5" opacity=".3"/>
-          <line x1="100" y1="110" x2="100" y2="145" stroke="#00c853" stroke-width=".5" opacity=".3"/>
-          <line x1="140" y1="110" x2="140" y2="145" stroke="#00c853" stroke-width=".5" opacity=".3"/>
-          <rect x="22" y="112" width="36" height="31" rx="2" fill="#00c853" opacity=".12"/>
-          <rect x="102" y="112" width="36" height="31" rx="2" fill="#00c853" opacity=".06"/>
-          <rect x="62" y="112" width="36" height="31" rx="2" fill="#f0a500" opacity=".08"/>
-          <!-- Scan line -->
-          <line x1="20" y1="128" x2="180" y2="128" stroke="#60b0ff" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/>
-          <!-- Drone body -->
-          <rect x="80" y="48" width="40" height="22" rx="6" fill="#1a2a1a" stroke="#00c853" stroke-width="1.5"/>
-          <!-- Camera gimbal -->
-          <circle cx="100" cy="76" r="8" fill="#111" stroke="#00c853" stroke-width="1.2"/>
-          <circle cx="100" cy="76" r="4" fill="#00c853" opacity=".4"/>
-          <!-- Scan beam -->
-          <path d="M92 84 L50 108 M100 84 L100 108 M108 84 L150 108" stroke="#60b0ff" stroke-width=".8" opacity=".3" stroke-dasharray="3 3"/>
-          <!-- Arms and props -->
-          <line x1="80" y1="56" x2="38" y2="42" stroke="#00c853" stroke-width="2" stroke-linecap="round"/>
-          <line x1="120" y1="56" x2="162" y2="42" stroke="#00c853" stroke-width="2" stroke-linecap="round"/>
-          <line x1="80" y1="65" x2="38" y2="79" stroke="#00c853" stroke-width="2" stroke-linecap="round"/>
-          <line x1="120" y1="65" x2="162" y2="79" stroke="#00c853" stroke-width="2" stroke-linecap="round"/>
-          <ellipse cx="38" cy="41" rx="18" ry="4" fill="#00c85330" stroke="#00c853" stroke-width="1"/>
-          <ellipse cx="162" cy="41" rx="18" ry="4" fill="#00c85330" stroke="#00c853" stroke-width="1"/>
-          <ellipse cx="38" cy="80" rx="18" ry="4" fill="#00c85330" stroke="#00c853" stroke-width="1"/>
-          <ellipse cx="162" cy="80" rx="18" ry="4" fill="#00c85330" stroke="#00c853" stroke-width="1"/>
-        </svg>
-        <span class="service-detail__visual-label">🎨 Illustration — not actual output</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SERVICE 3: ANALYTICS ── -->
-  <section class="service-detail" id="analytics" style="background:var(--bg-dark);">
+  <!-- ══ SERVICES LIST ══ -->
+  <section style="background:var(--white);">
     <div class="container">
-      <div class="service-card__icon">🧪</div>
-      <span class="status-badge status--development" style="margin:.75rem 0; display:inline-flex;">In Development</span>
-      <h2 style="margin-top:.5rem;">Data Analytics &amp; Advisory</h2>
-      <p style="margin-top:.75rem; font-size:1rem; max-width:700px;">
-        We are developing tools that combine drone data with seasonal records to provide advisory insights on irrigation scheduling, input timing, and crop health trends. This service is experimental and not yet commercially available.
-      </p>
-      <p style="margin-top:.75rem; font-size:.9rem; max-width:700px; color:var(--text-muted);">
-        We are actively looking for pilot farms and research partners to co-develop this capability. If you are interested in being an early collaborator, please contact us. Any AI-assisted analysis is experimental and should not replace professional agronomist advice or laboratory testing.
-      </p>
-      <a href="/#contact" class="btn btn-outline mt-3">Express Interest in Piloting</a>
+
+      <!-- SERVICE 1: CROP SPRAYING -->
+      <div id="spraying" style="padding-bottom: 4rem; border-bottom: 1px solid var(--border);">
+        <div style="display:flex; align-items:center; gap:.75rem; margin-bottom:.75rem;">
+          <span style="font-size:2rem;">💧</span>
+          <span class="status-badge status--available">Available for Pilot / Booking</span>
+        </div>
+        <h2>Crop Spraying Service</h2>
+        <div class="service-card__price" style="margin-top:1rem; border-bottom:none; padding-bottom:0;">
+          <span class="amount">$50</span>
+          <span class="unit">/ hour</span>
+          <span class="price-note">Indicative rate</span>
+        </div>
+        <p style="margin-top:1rem; font-size:1.05rem;">
+          Our drone crop spraying service delivers precise, uniform distribution of approved fertilisers, crop protection treatments, and biological inputs directly over your fields. By utilising aerial application, spraying can proceed even when fields are muddy, reducing soil compaction and physical crop damage.
+        </p>
+
+        <h3 style="margin-top:2rem; margin-bottom:1rem;">Service Details &amp; Scope</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem; margin-bottom:1.5rem;">
+          <div style="background:var(--grey-50); border:1px solid var(--border); padding:1.25rem; border-radius:var(--radius-sm);">
+            <h4 style="margin-bottom:.35rem; font-size:.95rem;">Pre-Flight Planning</h4>
+            <p style="font-size:.85rem; color:var(--text-muted);">Assessment of field layout, obstacle clearance, flight path boundary setup, and weather window checks.</p>
+          </div>
+          <div style="background:var(--grey-50); border:1px solid var(--border); padding:1.25rem; border-radius:var(--radius-sm);">
+            <h4 style="margin-bottom:.35rem; font-size:.95rem;">Precision Drone Application</h4>
+            <p style="font-size:.85rem; color:var(--text-muted);">Even droplet dispersal and uniform canopy penetration, significantly reducing chemical waste and operator exposure.</p>
+          </div>
+          <div style="background:var(--grey-50); border:1px solid var(--border); padding:1.25rem; border-radius:var(--radius-sm);">
+            <h4 style="margin-bottom:.35rem; font-size:.95rem;">Post-Operation Summary</h4>
+            <p style="font-size:.85rem; color:var(--text-muted);">Flight log verification, treated area confirmation, and application volume summary for farm records.</p>
+          </div>
+        </div>
+
+        <div class="availability-note" style="margin-top:1rem;">
+          <strong>Operational Availability Notice:</strong> Availability depends on equipment readiness, certified drone operators, suitable field and wind conditions, and all required regulatory approvals from the Brunei Department of Civil Aviation.
+        </div>
+
+        <div style="margin-top:1.5rem;">
+          <a href="/contact/?service=spraying" class="btn btn-primary">Contact Us for a Quotation</a>
+        </div>
+      </div>
+
+      <!-- SERVICE 2: AERIAL FIELD MONITORING -->
+      <div id="monitoring" style="padding-top: 4rem;">
+        <div style="display:flex; align-items:center; gap:.75rem; margin-bottom:.75rem;">
+          <span style="font-size:2rem;">🛰️</span>
+          <span class="status-badge status--available">Available for Pilot / Booking</span>
+        </div>
+        <h2>Aerial Field Monitoring</h2>
+        <div class="service-card__price" style="margin-top:1rem; border-bottom:none; padding-bottom:0;">
+          <span class="amount">$20</span>
+          <span class="unit">/ lot</span>
+          <span class="price-note">Indicative rate</span>
+        </div>
+        <p style="margin-top:1rem; font-size:1.05rem;">
+          Systematic aerial surveys providing high-resolution RGB imagery and multispectral vegetation mapping. Aerial surveys uncover variations across large acreage that cannot easily be detected from the ground, such as patchiness, waterlogging, or uneven crop establishment.
+        </p>
+
+        <h3 style="margin-top:2rem; margin-bottom:1rem;">Service Details &amp; Scope</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem; margin-bottom:1.5rem;">
+          <div style="background:var(--grey-50); border:1px solid var(--border); padding:1.25rem; border-radius:var(--radius-sm);">
+            <h4 style="margin-bottom:.35rem; font-size:.95rem;">High-Resolution Aerial Orthomosaic</h4>
+            <p style="font-size:.85rem; color:var(--text-muted);">Stitched detailed aerial imagery of your entire plot for visual inspection and boundary mapping.</p>
+          </div>
+          <div style="background:var(--grey-50); border:1px solid var(--border); padding:1.25rem; border-radius:var(--radius-sm);">
+            <h4 style="margin-bottom:.35rem; font-size:.95rem;">Vegetation &amp; Crop Health Map</h4>
+            <p style="font-size:.85rem; color:var(--text-muted);">NDVI and spectral indices highlighting areas of vigor, weed emergence, or crop stress.</p>
+          </div>
+          <div style="background:var(--grey-50); border:1px solid var(--border); padding:1.25rem; border-radius:var(--radius-sm);">
+            <h4 style="margin-bottom:.35rem; font-size:.95rem;">Summary Report</h4>
+            <p style="font-size:.85rem; color:var(--text-muted);">Annotated PDF report outlining key zones of observation to support on-the-ground management decisions.</p>
+          </div>
+        </div>
+
+        <div class="availability-note" style="margin-top:1rem;">
+          <strong>Lot Definition &amp; Pricing Terms:</strong> The exact definition and acreage of a "lot" must be confirmed in consultation with the farm owner before finalizing pricing. Survey operations remain subject to Brunei DCA regulations.
+        </div>
+
+        <div style="margin-top:1.5rem;">
+          <a href="/contact/?service=monitoring" class="btn btn-primary">Contact Us for a Quotation</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- CTA BAND -->
+  <!-- ══ CTA BAND ══ -->
   <div class="cta-band">
     <div class="container">
-      <h2>Ready to explore what drones can do for your farm?</h2>
-      <p>Tell us about your land, crops, and the challenges you face. We'll get back to you within 2–3 business days.</p>
+      <h2>Need a customised quote for your farm?</h2>
+      <p>Share your farm location, estimated plot size, and requirements. We will provide indicative estimates and discuss pilot options.</p>
       <div class="cta-band__actions">
-        <a href="/#contact" class="btn btn-primary">Send an Enquiry</a>
-        <a href="/#how" class="btn btn-outline">How We Work</a>
+        <a href="/contact/" class="btn btn-white">Contact Us</a>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- ══ FOOTER ══ -->
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <div class="footer__logo">
-          <img src="../images/logo.png" alt="Saqy Fly" style="height:52px; width:auto;" />
-        </div>
-        <p>Every Drop. Every Crop. Every Future.<br>Precision agriculture drone services for Brunei and Southeast Asia. Early-stage · Seeking pilot partners.</p>
+        <img src="../images/logo.png" alt="Saqy Fly" />
+        <p>Every Drop. Every Crop. Every Future.<br>Precision agriculture drone services in Brunei Darussalam.</p>
       </div>
       <div class="footer__col">
         <h4>Navigate</h4>
         <ul>
-          <li><a href="/#about">About</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
           <li><a href="/services/">Services</a></li>
-          <li><a href="/#how">How We Work</a></li>
-          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/contact/">Contact Us</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h4>Services</h4>
         <ul>
-          <li><a href="/services/#spraying">Drone Crop Spraying</a></li>
+          <li><a href="/services/#spraying">Crop Spraying Service</a></li>
           <li><a href="/services/#monitoring">Aerial Field Monitoring</a></li>
-          <li><a href="/services/#analytics">Data Analytics (Upcoming)</a></li>
         </ul>
       </div>
     </div>
@@ -329,6 +187,6 @@
     </div>
   </footer>
 
-  <script src="../js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,16 @@
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Secrets — never commit these
+.env
+*.env
+secrets.txt
+
+# Node (if you ever add a build step)
+node_modules/

@@ -588,6 +588,37 @@ section { padding: 5rem 0; }
   font-size: 1.75rem;
   margin: 0 auto 1rem;
   border: 2px solid var(--blue-200, #bfdbfe);
+  overflow: hidden;
+}
+.supervision-card__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Team Members Gallery within Project Team card */
+.team-avatars-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .75rem;
+  margin: 0 auto 1.25rem;
+  flex-wrap: wrap;
+}
+.team-avatar-img {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2.5px solid var(--ocean);
+  box-shadow: 0 4px 12px rgba(0,119,182,.18);
+  background: var(--white);
+  transition: transform var(--transition);
+}
+.team-avatar-img:hover {
+  transform: scale(1.08);
 }
 .supervision-card h4 { font-size: 1rem; margin-bottom: .3rem; }
 .supervision-card__title { font-size: .82rem; color: var(--text-muted); margin-bottom: .15rem; }

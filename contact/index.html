@@ -105,7 +105,12 @@
 
       <!-- RIGHT: Form -->
       <div>
-        <form class="contact-form" id="enquiryForm" novalidate>
+        <form class="contact-form" id="enquiryForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="contact" />
+          <p style="display:none;" aria-hidden="true">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          </p>
+          <input type="hidden" name="subject" value="New Saqy Fly Enquiry from %{name}" />
           <h3 style="margin-bottom:1.25rem;">Submit an Enquiry</h3>
 
           <div class="form-row">
@@ -160,10 +165,6 @@
           <button type="submit" class="btn btn-primary form__submit" id="submitBtn">
             Send Enquiry
           </button>
-
-          <div class="form__notice">
-            🔒 Enquiries are securely processed and dispatched via Google Apps Script to our project mailbox.
-          </div>
 
           <div class="form__status" id="formStatus"></div>
         </form>

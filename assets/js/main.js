@@ -1,10 +1,9 @@
 /**
  * SaqyFly — main.js
- * Handles Navigation, Year, and Google Apps Script Form Submission (with CORS / redirect handling)
+ * Handles Navigation, Year, and Enquiry Form Submission (Netlify Forms native handling)
  */
 
-// Configure your Google Apps Script Web App URL here
-// Example: 'https://script.google.com/macros/s/AKfycbx.../exec'
+// Optional: If you also wish to mirror enquiries to Google Sheets via Google Apps Script:
 const GOOGLE_APPS_SCRIPT_URL = '';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -57,12 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // Guard: Check if Google Apps Script URL has been configured
-      if (!GOOGLE_APPS_SCRIPT_URL || GOOGLE_APPS_SCRIPT_URL.trim() === '') {
-        showStatus('error', '⚠️ Backend email service is not yet configured. Please follow the Google Apps Script setup guide or reach out via email directly.');
-        return;
-      }
-
       // Basic client-side validation
       const name = document.getElementById('name')?.value.trim();
       const email = document.getElementById('email')?.value.trim();
@@ -73,62 +66,37 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Prepare payload
-      const formData = new FormData(form);
-      const payload = {
-        enquiry_type: formData.get('enquiry_type') || '',
-        name: formData.get('name') || '',
-        organisation: formData.get('organisation') || '',
-        email: formData.get('email') || '',
-        service_requested: formData.get('service_requested') || '',
-        location: formData.get('location') || '',
-        message: formData.get('message') || '',
-        submission_date: new Date().toISOString()
-      };
-
-      showStatus('loading', '⏳ Sending your enquiry securely...');
+      showStatus('loading', '⏳ Sending your enquiry...');
       if (submitBtn) submitBtn.disabled = true;
 
-      try {
-        /**
-         * Note regarding Google Apps Script CORS:
-         * Standard fetch with 'application/json' will trigger an OPTIONS preflight that GAS does not support.
-         * Using URLSearchParams or FormData with mode 'no-cors' or POST to GAS allows redirection handling.
-         * For reliable JSON parsing in GAS, URLSearchParams or FormData works best.
-         */
-        const params = new URLSearchParams();
-        for (const [key, value] of Object.entries(payload)) {
-          params.append(key, value);
-        }
+      // Prepare payload with form-name for Netlify Forms
+      const formData = new FormData(form);
+      if (!formData.get('form-name')) {
+        formData.append('form-name', 'contact');
+      }
 
-        const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+      const targetEndpoint = (GOOGLE_APPS_SCRIPT_URL && GOOGLE_APPS_SCRIPT_URL.trim() !== '')
+        ? GOOGLE_APPS_SCRIPT_URL
+        : '/';
+
+      try {
+        const response = await fetch(targetEndpoint, {
           method: 'POST',
-          body: params,
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
-          }
+          },
+          body: new URLSearchParams(formData).toString()
         });
 
-        // Parse result
-        const result = await response.json().catch(() => null);
-
-        if (result && result.status === 'success') {
-          showStatus('success', '✅ Thank you! Your enquiry has been received and emailed to our team. We will get back to you within 2–3 business days.');
+        if (response.ok) {
+          showStatus('success', '✅ Thank you! Your enquiry has been received. We will get back to you within 2–3 business days.');
           form.reset();
-        } else if (result && result.message) {
-          showStatus('error', `❌ Unable to process: ${result.message}`);
         } else {
-          // Fallback check if response was ok
-          if (response.ok) {
-            showStatus('success', '✅ Thank you! Your enquiry has been successfully delivered.');
-            form.reset();
-          } else {
-            showStatus('error', '❌ Submission error. Please verify the backend URL or email us directly.');
-          }
+          showStatus('error', '❌ Submission error. Please try again or email us directly at s.emeskn@gmail.com.');
         }
       } catch (err) {
         console.error('Submission error:', err);
-        showStatus('error', '❌ Connection error. Please check your internet connection or email us directly.');
+        showStatus('error', '❌ Connection error. Please try again or email us directly at s.emeskn@gmail.com.');
       } finally {
         if (submitBtn) submitBtn.disabled = false;
       }
